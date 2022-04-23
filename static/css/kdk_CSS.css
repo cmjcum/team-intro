@@ -1,0 +1,174 @@
+* {
+           font-family: 'Noto Serif KR', serif;
+       }
+
+       .background {
+           min-width: 850px;
+
+           background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1650440018145-94cc5e8a7f2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80');
+           background-position: center 30%;
+           padding-top: 10%;
+           padding-bottom: 10%;
+
+       }
+
+       .content {
+           width: 50%;
+           min-width: 600px;
+           max-width: 800px;
+           height: auto;
+
+           margin: auto;
+
+           border-radius: 50px;
+
+           padding: 30px;
+           background: linear-gradient(225deg, transparent 60px, white 0);
+       }
+
+       .profile {
+           max-width: 600px;
+           height: 250px;
+
+           display: flex;
+           flex-direction: row;
+
+           margin: 5% auto 10px auto;
+       }
+
+       .myPic {
+           width: 200px;
+           height: 200px;
+
+           background-image: url("https://ca.slack-edge.com/T039CS8AH0D-U039VS1RVEZ-56d9b9563db0-512");
+           background-position: center;
+           background-size: contain;
+
+           border-radius: 50%;
+       }
+
+       .profileCol1 {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+
+           flex: 1;
+       }
+
+       .profileCol2 {
+           flex: 2;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+
+           text-align: center;
+       }
+
+       .profileButtons {
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           justify-content: center;
+       }
+       .profileButtons > div {
+           margin-left: 5px;
+           margin-right: 5px;
+       }
+       .profileButtons > div:hover {
+           animation-name: profileBtnAni;
+           animation-duration: 0.3s;
+           animation-fill-mode: forwards;
+       }
+       @keyframes profileBtnAni {
+           0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+       }
+
+       a:link { color: black; }
+       a:visited { color: black;  }
+       a:hover { color: mediumaquamarine;  }
+
+       .determination {
+           text-align: center;
+           color: white;
+
+           background-color: cornflowerblue;
+
+           padding: 3px;
+           margin-right: 10%;
+           margin-left: 10%;
+       }
+
+       .mbti {
+           height: 300px;
+
+           margin-top: 5px;
+
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           justify-content: center;
+       }
+
+       .mbtiImage {
+           width: 200px;
+           height: 250px;
+
+           background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJC3znP0VrD_G4GjI8jJeny3fJuWr7VfbIAw&usqp=CAU');
+           background-position: center 30%;
+           background-size: cover;
+
+           margin-right: 5px;
+       }
+
+       .strengthAndWork {
+           margin-top: 20px;
+           margin-bottom: 20px;
+
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+       }
+       .strengthAndWork > div > p { text-align: center;  }
+
+       .btn-group > button {
+           background-color: cornflowerblue;
+           border-color: cornflowerblue;
+
+           margin-bottom: 20px;
+       }
+       .btn-group > button:focus { box-shadow: none;  }
+
+       .mypost {
+           margin-right: 10%;
+           margin-left: 10%;
+       }
+
+       .mypost > button {
+           margin-top: 10px;
+           background-color: rgb(30, 30, 30);
+           border-color: rgb(30, 30, 30);
+       }
+       .mypost > button:focus {
+           box-shadow: none;
+           background-color: rgb(30, 30, 30);
+           border-color: rgb(30, 30, 30);
+       }
+       .mypost > button:hover { background-color: black; }
+
+       .mycards {
+           margin-right: 10%;
+           margin-left: 10%;
+       }
+       .mycards > .card {
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }

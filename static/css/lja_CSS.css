@@ -1,0 +1,192 @@
+ * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        .background {
+            min-width: 850px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://image.utoimage.com/preview/cp785276/2018/07/201807014131_206.jpg');
+            background-position: center 30%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+
+        }
+
+        .content {
+            width: 50%;
+            min-width: 600px;
+            max-width: 800px;
+            height: auto;
+
+            margin: auto;
+
+            border-radius: 50px;
+
+            padding: 30px;
+            background: linear-gradient(225deg, transparent 60px, white 0);
+        }
+
+        .profile {
+            max-width: 600px;
+            height: 250px;
+
+            display: flex;
+            flex-direction: row;
+
+            margin: 5% auto 10px auto;
+        }
+
+        .myPic {
+            width: 200px;
+            height: 200px;
+
+            background-image: url("https://teamsparta.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbdf838f8-4868-4790-bff6-202448efd4ce%2FKakaoTalk_20220406_164653506.jpg?table=block&id=4b1e477b-a8dc-4735-a493-362b61733452&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=1790&userId=&cache=v2");
+            background-position: center;
+            background-size: contain;
+
+            border-radius: 50%;
+        }
+
+        .profileCol1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            flex: 1;
+        }
+
+        .profileCol2 {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .profileButtons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .profileButtons > div {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .profileButtons > div:hover {
+            animation-name: profileBtnAni;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes profileBtnAni {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        /*.profileButtons > div:hover > a > img:hover {*/
+        /*    transform: scale(1.2);*/
+        /*}*/
+
+        a:link { color: black; }
+        a:visited { color: black;  }
+        a:hover { color: mediumaquamarine;  }
+
+        .determination {
+            text-align: center;
+            color: white;
+
+            background-color: cornflowerblue;
+
+            padding: 3px;
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+
+        .mbti {
+            height: 300px;
+
+            margin-top: 5px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mbtiImage {
+            width: 200px;
+            height: 250px;
+
+            background-image: url('https://static.neris-assets.com/images/personality-types/avatars/infp-mediator.png');
+            background-position: center 30%;
+            background-size: cover;
+
+            margin-right: 5px;
+        }
+
+        .strengthAndWork {
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .strengthAndWork > div > p { text-align: center;  }
+
+        .btn-group > button {
+            background-color: cornflowerblue;
+            border-color: cornflowerblue;
+
+            margin-bottom: 10px;
+        }
+        .btn-group > button:focus { box-shadow: none;  }
+
+        .mypost {
+            margin: 10% 10% auto 10%;
+        }
+
+        .mypost > button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(30, 30, 30);
+            border-color: rgb(30, 30, 30);
+        }
+        .mypost > button:focus {
+            box-shadow: none;
+            background-color: rgb(30, 30, 30);
+            border-color: rgb(30, 30, 30);
+        }
+        .mypost > button:hover { background-color: black; }
+
+        .mycards {
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+        .mycards > .card {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .msg-card {
+            width: 80%;
+            margin: auto;
+        }
+        .msg-card > .card {
+            margin-bottom: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .comments-list {
+            width: 80%;
+            margin:auto;
+        }

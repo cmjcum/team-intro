@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+
+    <title>코못죽 | 노을</title>
+
+    <!--웹폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap"
+          rel="stylesheet">
+    <!--스타일시트-->
+    <link href="{{ url_for('static', filename='css/ne_CSS.css') }}" rel="stylesheet">
+
+
+    <script>
+
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            $.ajax({
+                type: "GET",
+                url: "/sunset/comment",
+                data: {},
+                success: function (response) {
+                    let rows = response['guest_book']
+                    for (let i = 0; i < rows.length; i++) {
+                        let num = rows[i]['num'];
+                        let name = rows[i]['name'];
+                        let comment = rows[i]['comment'];
+
+                        let temp_html = `<tr>
+                                            <td>${num}</td>
+                                            <td>${name}</td>
+                                            <td>${comment}</td>
+                                        </tr>`
+
+                        $('#comments-list').append(temp_html)
+                    }
+                }
+            })
+        }
+
+        function posting() {
+            let name = $('#name-input').val();
+            let comment = $('#comment-input').val();
+
+            if (name == "" || comment == "") {
+                alert("입력해주세요!")
+                return
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/sunset/comment',
+                data: {name_give: name, comment_give: comment},
+                success: function (response) {
+                    alert(response["msg"])
+                    window.location.reload()
+                }
+            })
+        }
+
+
+        function open_box() {
+            $('#comment-box').show()
+        }
+
+        function close_box() {
+            $('#comment-box').hide()
+        }
+
+
+    </script>
+<!--    <link rel="stylesheet" href="eul_style.css">-->
+
+
+</head>
+
+<body>
+<div class="bg">
+    <div class="wrap">
+
+        <div class="header">
+            <div class="me">
+                <div class="my-img"></div>
+                <h1>노을</h1>
+            </div>
+            <div class="content">
+                <div class="tag">
+                    <h2 class="tags">#집순이　#노는게제일좋아　#맵찔이<br>#문과라도_안_죄송한_이세계로_감_읽어보세요</h2>
+                </div>
+                <div class="link">
+                    <a href="https://moist-ink.tistory.com/category/%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84"
+                       target="_blank">
+                        <div class="item">
+                            <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbwMTWu%2FbtrzTeEaLbc%2Fh8yWf67nnV24KhNvzFosKk%2Fimg.png"
+                                 width="80%">
+                            <span class="label">개발일지</span>
+                        </div>
+                    </a>
+                    <a href="https://www.klei.com/games/dont-starve" target="_blank">
+                        <div class="item">
+                            <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbttlMj%2FbtrzVBr7Joj%2F7QIxokjEzSDfwAR1VswIQ1%2Fimg.png"
+                                 width="80%">
+                            <span class="label">게임</span>
+                        </div>
+                    </a>
+
+                    <a href="https://ridibooks.com/books/2378009513" target="_blank">
+                        <div class="item">
+                            <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcQg0p8%2FbtrzYFNMtZy%2FRiKHNiA9CyUDCZZ7D9CKV0%2Fimg.png"
+                                 width="80%">
+                            <span class="label">웹소설</span>
+                        </div>
+                    </a>
+                    <a href="https://moist-ink.tistory.com/pages/my-pic" target="_blank">
+                        <div class="item">
+                            <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbeRAjl%2FbtrzYFAiMAl%2FxmCeGyojpywtZFi3Q7EQUK%2Fimg.png"
+                                 width="80%">
+                            <span class="label">사진찍기</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="short">
+            <h3>좋은 사람들과 함께 빛을 볼 날이. 반드시 찾아올 거예요.</h3>
+        </div>
+
+        <div class="desc">
+            <div class="img-mbti"></div>
+            <h4>이런 사람이에요!</h4>
+            <p>저는 기본적으로 <span class="deco">내향적</span>인 사람입니다.</p>
+            <p>집 밖을 나서는 순간부터, 배터리가 실시간으로 소모되는 타입이에요. 물론 나가서 사람들과 노는 걸 싫어한다는 건 아니에요. 좋아하는 옷을 입고 외출하는 건 좋아해요. 하지만 휴식은 무조건
+                혼자만의 공간에서 해야 하는 편입니다. 그
+                말은 뭐다? 제가 집을 아주 사랑한다는 뜻이죠.</p>
+            <p>그래서! 집에서 혼자 할 수 있는 활동을 좋아해요. 폰으로 게임을 하거나, 웹소설을 읽고는 합니다. 게임은 일본어는 청해가 조금 돼서 일본어로 된 게임도 즐기곤 합니다. 최근에 그랑블루
+                판타지를 시작해봤어요. 웹소설은 장르를 가리지 않고 보는 편이에요. 판타지부터 무협, 로맨스까지 가리지 않고 재미있으면 본답니다. 요즘엔 문송안함이나 섭남파업이나 명급리가
+                재밌더라고요!</p>
+            <p>다른 사람에게 질문하기는 조금 용기가 필요해요. 타인에게 조언을 듣는 것보다, 우선은 혼자서 여기저기 찾아보며 해결하려고 노력하는 편입니다. 그래도 최대한 물어보고자 용기를 내는 노력을
+                하고 있어요!</p>
+
+
+        </div>
+
+        <div class="desc">
+            <h4>이런 점이 멋져요!</h4>
+            <p>타인이 어떤 사람이든지, <span class="deco">있는 그대로 받아들이려고 노력</span>합니다. 지피지기 백전불태라고 하죠. 물론 전투가 아니라, 사람과 친해지는 데에도 중요한
+                일이라고 생각합니다.</p>
+            <p>홈페이지나 티스토리 스킨을 만져보던 감각으로 CSS를 이용해서 디자인 요소 이리저리 바꾸어보는 건 그래도 자신 있어요. 아무래도 <span class="deco">저희 팀의 스타일리스트(?)</span>를 자처해도 될 것
+                같아요(웃음)</p>
+            <p>맡은 일을 <span class="deco">책임감</span> 있게 마무리하기 위해 힘내는 부분도 장점이죠!</p>
+            <p>제가 할 수 있는 능력이 있다면, 팀원의 부족한 부분들을 채워주고자 노력합니다.</p>
+        </div>
+
+        <div class="desc">
+            <h4>이렇게 함께 일해요!</h4>
+            <p><span class="deco">유도리 있어요.</span> 계획을 칼같이 지켜야 하는 건 아니에요. 상황에 따라 유동적으로 작업의 순서를 바꾸거나 새로 추가하는 일에 거부감은 적은 편이에요. 식사 시간이나 취침 시간도 조정할 수
+                있어요. 다만 협의는 필요하다는 점!</p>
+            <p><span class="deco">마감 시간은 엄수해요.</span> 세세한 사항의 변동은 이해하지만, 데드라인은 지켜야죠.</p>
+            <p>- 다른 사람과 맞추어 <span class="deco">통일감 있는 작업물을 내는 것</span>에 중점을 두고 있어요. 독창적인 내용도 좋지만, 팀원들과 의견을 나누고 그것들을 최선의 형태로 반영하여 결과물을 만들어내는 과정이
+                뿌듯해요.</p>
+
+        </div>
+
+        <div class="comment">
+            <h2>방명록</h2>
+            <button onclick="open_box()" type="button" class="btn btn-outline-secondary">열기</button>
+            <div class="comment-box" id="comment-box">
+                <div class="form">
+                    <div class="form-floating mb-3">
+                        <input id="name-input" type="email" class="form-control" placeholder="name@example.com">
+                        <label for="name-input">Name</label>
+                    </div>
+                    <div class="form-floating">
+                <textarea id="comment-input" class="form-control" placeholder="Leave a comment here"
+                          style="height: 100px"></textarea>
+                        <label for="comment-input">Comments</label>
+                    </div>
+
+                    <button onclick="posting()" id="form-btn" type="button" class="btn btn-outline-info">메시지 남기기!
+                    </button>
+                </div>
+
+                <div class="comments-table">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody id="comments-list">
+
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="close_box()" type="button" class="btn btn-outline-secondary">닫기</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

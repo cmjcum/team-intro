@@ -1,0 +1,321 @@
+@charset "utf-8";
+
+/*기본 디자인 요소*/
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.3em;
+    letter-spacing: 10px;
+}
+
+h2 {
+    font-size: .1 .8em;
+    line-height: 1.6em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    border-left: 10px solid aquamarine;
+}
+
+p {
+    font-size: 0.9em;
+    text-indent: 1em;
+}
+
+span {
+    font-size: 0.9em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
+.deco {
+    box-shadow: inset 0 -16px lightsteelblue;
+    line-height: 21px;
+}
+
+/*배경*/
+
+.bg {
+    width: 100%;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://blog.kakaocdn.net/dn/VBFsH/btrzX0kD4qe/OhKWXUUkwwJAT41PWpSlqk/img.jpg');
+    background-position: center 30%;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*내용 영역*/
+
+.wrap {
+
+    max-width: 900px;
+    width: 95%;
+
+    height: auto;
+
+    background: linear-gradient(225deg, transparent 70px, white 0);
+    border-radius: 50px;
+
+    margin: 5% auto;
+    padding: 5%;
+}
+
+
+/*헤더 영역*/
+
+.header {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 20px;
+
+    display: flex;
+}
+
+.header .me {
+    float: left;
+
+    width: 240px;
+    height: 100%;
+
+    /*border: 1px solid yellow;*/
+}
+
+.header .me .my-img {
+
+    background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FuuvRL%2FbtrzTeqHsO4%2Fd4GVL6KU3UZkZJg4IZCEx0%2Fimg.png');
+    background-position: center;
+    background-size: cover;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+    margin: auto;
+}
+
+.header .content {
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /*border: 1px solid green;*/
+}
+
+
+.header .content .tag {
+    width: 100%;
+    height: 80px;
+
+    /*border: 1px solid red;*/
+}
+
+.header .content .link {
+    width: 100%;
+    height: 100%;
+
+    padding-right: 10%;
+    padding-left: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    /*border: 1px solid green;*/
+}
+
+.header .content .link .item {
+    width: 80px;
+    height: 80px;
+
+    text-align: center;
+
+    /*background-color: #BFDDE0;*/
+}
+
+
+/*한줄각오*/
+
+.short {
+    margin-bottom: 50px;
+    margin-top: 25px;
+    padding: 10px;
+
+    border-radius: 50px;
+
+    border: 2px dashed slateblue;
+}
+
+
+/*자기소개*/
+
+.desc {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+    padding: 20px;
+
+    border: 2px dashed aquamarine;
+
+    display: inline-block;
+}
+
+.desc .img-mbti {
+    float: right;
+
+    width: 180px;
+    height: 180px;
+
+    background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FDFuY6%2FbtrzY1cax5z%2F8sblfYBqEq5qAIwXMFpuwk%2Fimg.png');
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 50%;
+
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid aquamarine;
+}
+
+
+/*방명록*/
+
+.comment {
+    padding: 20px;
+
+    /*border: 2px dashed blueviolet;*/
+}
+
+.comment-box {
+    display: none;
+}
+
+.form {
+    margin-bottom: 30px;
+}
+
+.table {
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+/*모바일 대응*/
+
+@media (max-width: 725px) {
+    .header {
+        width: 100%;
+        height: auto;
+
+        margin-bottom: 20px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header .me {
+        position: center;
+
+        width: 100%;
+        height: 100%;
+
+        /*border: 1px solid yellow;*/
+    }
+
+    .header .content {
+        width: 100%;
+        height: auto;
+
+        /*border: 1px solid green;*/
+    }
+
+
+    .header .content .tag {
+        width: 100%;
+        height: auto;
+
+        margin: 15px;
+    }
+
+    .header .content .link {
+        width: 100%;
+        height: auto;
+
+        padding-right: 10%;
+        padding-left: 10%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+
+    .header .content .link .item {
+        width: 55px;
+        height: 55px;
+
+        margin-bottom: 10px;
+
+        text-align: center;
+
+    }
+
+    .label {
+        font-size: 0.6em;
+    }
+
+    .tags {
+        font-size: 1.3em;
+    }
+}
+
